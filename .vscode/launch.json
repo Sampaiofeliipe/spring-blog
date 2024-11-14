@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AnhembiblogApplication<anhembiblog>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.anhembiblog.anhembiblog.AnhembiblogApplication",
+            "projectName": "anhembiblog",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
