@@ -22,7 +22,7 @@ import com.anhembiblog.anhembiblog.service.PostService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/Post")
+@RequestMapping("/post")
 @Validated
 public class PostController {
     
