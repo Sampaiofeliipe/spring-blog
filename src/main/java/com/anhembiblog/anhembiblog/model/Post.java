@@ -2,6 +2,8 @@ package com.anhembiblog.anhembiblog.model;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,14 +21,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = Post.TABLE_NAME )
+@Table(name = Post.TABLE_NAME)
 public class Post {
 
     public static final String TABLE_NAME = "post";
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @NotBlank
     @Size(max = 255)
     private String title;
@@ -37,6 +39,7 @@ public class Post {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User author;
 
     private LocalDateTime createat = LocalDateTime.now();
