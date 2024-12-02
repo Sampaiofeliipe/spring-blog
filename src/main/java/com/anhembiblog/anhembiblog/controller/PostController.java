@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.anhembiblog.anhembiblog.model.Post;
+import com.anhembiblog.anhembiblog.model.User;
 import com.anhembiblog.anhembiblog.service.PostService;
 
 import jakarta.validation.Valid;

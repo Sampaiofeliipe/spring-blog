@@ -32,6 +32,7 @@ public class UserService {
     public User update(User obj) {
         User newObj = findById(obj.getId());
         newObj.setPassword(obj.getPassword());
+        newObj.setEmail(obj.getEmail());
         return this.repo.save(newObj);
     }
 

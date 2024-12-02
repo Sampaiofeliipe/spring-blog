@@ -12,16 +12,16 @@ import com.anhembiblog.anhembiblog.repository.PostRepo;
 
 @Service
 public class PostService {
-    
+
     @Autowired
     private PostRepo repo;
 
     public Post findById(Long id) {
         Optional<Post> post = this.repo.findById(id);
         return post.orElseThrow(() -> new RuntimeException(
-            "Post não encontrado"
-        ));
+                "Post não encontrado"));
     }
+
     @Transactional
     public Post create(Post obj) {
         obj.setId(null);
