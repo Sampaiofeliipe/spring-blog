@@ -4,6 +4,6 @@ TechRoadMap é um blog dedicado a auxiliar usuários a traçarem seus caminhos n
 
 Tecnologias: Java, Javascript, CSS, HTML, React, MySQL, framework Spring bom Spring Boot, IDE VIsual Studio Code
 
-RA - Felipe Souto Sampaio da Silva
-RA: 12523218896 - Maria Giulia de Souza Vicentini
-RA: 125221110547 - Jennifer Reis Sicherolli de Souza
+- RA  12523218178 | Felipe Souto Sampaio da Silva
+- RA: 12523218896 | Maria Giulia de Souza Vicentini
+- RA: 125221110547 | Jennifer Reis Sicherolli de Souza
