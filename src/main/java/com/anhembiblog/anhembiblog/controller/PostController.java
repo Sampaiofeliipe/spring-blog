@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.anhembiblog.anhembiblog.model.Post;
-import com.anhembiblog.anhembiblog.model.User;
 import com.anhembiblog.anhembiblog.service.PostService;
 
 import jakarta.validation.Valid;
@@ -25,7 +24,7 @@ import jakarta.validation.Valid;
 @RequestMapping("/post")
 @Validated
 public class PostController {
-    
+
     @Autowired
     private PostService postService;
 
@@ -37,10 +36,10 @@ public class PostController {
 
     @PostMapping
     @Validated
-    public ResponseEntity<Void> create (@Valid @RequestBody Post obj) {
+    public ResponseEntity<Void> create(@Valid @RequestBody Post obj) {
         this.postService.create(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
-            .path("/{id}").buildAndExpand(obj.getId()).toUri();
+                .path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
 
@@ -49,13 +48,13 @@ public class PostController {
     public ResponseEntity<Void> update(@Valid @RequestBody Post obj, @PathVariable Long id) {
         obj.setId(id);
         this.postService.update(obj);
-        return ResponseEntity.noContent().build();        
+        return ResponseEntity.noContent().build();
     }
-    
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         this.postService.delete(id);
         return ResponseEntity.noContent().build();
-    }    
-    
+    }
+
 }
