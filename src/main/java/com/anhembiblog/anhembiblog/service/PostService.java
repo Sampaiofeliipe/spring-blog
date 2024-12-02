@@ -16,6 +16,10 @@ public class PostService {
     @Autowired
     private PostRepo repo;
 
+    public List<Post> findAll() {
+        return repo.findAll();
+    }
+
     public Post findById(Long id) {
         Optional<Post> post = this.repo.findById(id);
         return post.orElseThrow(() -> new RuntimeException(

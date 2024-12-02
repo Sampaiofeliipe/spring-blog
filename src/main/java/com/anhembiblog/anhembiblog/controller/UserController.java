@@ -1,7 +1,9 @@
 package com.anhembiblog.anhembiblog.controller;
 
 import java.net.URI;
+import java.util.List;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -20,6 +22,7 @@ import com.anhembiblog.anhembiblog.model.User.UpdateUser;
 import com.anhembiblog.anhembiblog.service.UserService;
 
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/user")
@@ -28,6 +31,12 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @GetMapping("/")
+    public ResponseEntity<List<User>> findAll() {
+        List<User> users = this.userService.findAll();
+        return ResponseEntity.ok().body(users);
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id) {

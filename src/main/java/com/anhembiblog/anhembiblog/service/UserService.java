@@ -1,5 +1,6 @@
 package com.anhembiblog.anhembiblog.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,10 @@ public class UserService {
 
     @Autowired
     private UserRepo repo;
+
+    public List<User> findAll() {
+        return repo.findAll();
+    }
 
     public User findById(Long id) {
         Optional<User> user = this.repo.findById(id);

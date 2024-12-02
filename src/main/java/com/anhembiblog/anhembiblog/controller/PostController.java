@@ -1,7 +1,9 @@
 package com.anhembiblog.anhembiblog.controller;
 
 import java.net.URI;
+import java.util.List;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -20,6 +22,7 @@ import com.anhembiblog.anhembiblog.model.User;
 import com.anhembiblog.anhembiblog.service.PostService;
 
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/post")
@@ -28,6 +31,12 @@ public class PostController {
 
     @Autowired
     private PostService postService;
+
+    @GetMapping("/")
+    public ResponseEntity<List<Post>> findAll() {
+        List<Post> posts = this.postService.findAll();
+        return ResponseEntity.ok().body(posts);
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Post> findById(@PathVariable Long id) {
