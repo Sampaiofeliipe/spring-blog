@@ -7,3 +7,5 @@ Tecnologias: Java, Javascript, CSS, HTML, React, MySQL, framework Spring bom Spr
 - RA  12523218178 | Felipe Souto Sampaio da Silva
 - RA: 12523218896 | Maria Giulia de Souza Vicentini
 - RA: 125221110547 | Jennifer Reis Sicherolli de Souza
+
+- Link da apresentação: https://youtu.be/gVEZ-XrWAiI
